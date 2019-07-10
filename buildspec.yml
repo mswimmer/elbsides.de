@@ -1,0 +1,27 @@
+version: 0.2
+
+env:
+  variables:
+    LC_ALL: en_US.UTF-8
+    LANGUAGE: en_US.UTF-8
+    LANG: en_US.UTF-8
+    
+phases:
+  install:
+    commands:
+      - gem install jekyll jekyll-paginate jekyll-sitemap jekyll-gist  html-proofer  jekyll-feed, jemoji jekyll-include-cache
+  build:
+    commands:
+      - echo  Building and deploy beta at `date`
+      - cd beta
+      - rake build
+      - echo Build completed at `date`
+
+  post_build:
+    commands:
+      - echo Deploying to S3 at `date`
+      - cd beta
+      - rake deploy
+      - echo Deployment completed at `data`
+
+
