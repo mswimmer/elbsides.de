@@ -9,7 +9,7 @@ env:
 phases:
   install:
     commands:
-      - gem install jekyll jekyll-paginate jekyll-sitemap jekyll-gist  html-proofer  jekyll-feed, jemoji jekyll-include-cache
+      - gem install jekyll jekyll-paginate jekyll-sitemap jekyll-gist  html-proofer  jekyll-feed jemoji jekyll-include-cache
   build:
     commands:
       - echo  Building and deploy beta at `date`
